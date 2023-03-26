@@ -20,7 +20,7 @@ function fetchCountries() {
   console.log(inputName);
 
   fetch(`https://restcountries.com/v3.1/name/${inputName}?fields=name,capital,population,flags,languages`).then(response => {
-    if (!response) {
+    if (!response.ok) {
     Notiflix.Notify.failure("Oops, there is no country with that name")
     }
     return response.json()
@@ -30,8 +30,8 @@ function fetchCountries() {
       Notiflix.Notify.failure(
         "Too many matches found. Please enter a more specific name."
       );
-    } else if (country.length >= 2 && country.length <= 10) { counriesListMarkup(country) }
-    else { countryCardMarkup(country) }
+    } else if (country.length >= 2 && country.length <= 10) { renderCountryList(country) }
+    else { renderCountryCard(country) }
     })
     .catch(error => console.log(error))
 }
@@ -50,9 +50,17 @@ function countryCardMarkup({name, capital, population, flags, languages  }) {
   countryEl.insertAdjacentHTML('beforeend', countryCard) ;
 }
 
+function renderCountryCard(array) {
+  array.forEach(card => countryCardMarkup(card))
+}
+
 function counriesListMarkup({name, flags}) {
 
   const countryList = `<li><img src="${flags.svg}" alt="${name.official}"><h2>${name.official}</h2></li>`;
 
   countryEl.insertAdjacentHTML('beforeend', countryList) ;
+}
+
+function renderCountryList(array) {
+  array.forEach(list => counriesListMarkup(list))
 }
