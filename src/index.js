@@ -17,10 +17,10 @@ inputEl.addEventListener('input', debounce(fetchCountries, DEBOUNCE_DELAY));
 
 function fetchCountries() {
   inputName = inputEl.value.trim();
-  console.log(inputName);
+  countryEl.innerHTML = '';
 
   fetch(`https://restcountries.com/v3.1/name/${inputName}?fields=name,capital,population,flags,languages`).then(response => {
-    countryEl.innerHTML = '';
+   
     if (!response.ok) {
       Notiflix.Notify.failure("Oops, there is no country with that name");
       throw new Error(res.status);
@@ -52,7 +52,7 @@ function countryCardMarkup({name, capital, population, flags, languages  }) {
   <h2>${name.official}</h2>
   <p> Capital: ${capital}</p>
   <p> population: ${population}</p>
-  <p> languages: ${Object.values(languages)}</p>
+  <p> languages: ${Object.values(languages).join(', ')}</p>
   </li>`;
 
   countryEl.insertAdjacentHTML('beforeend', countryCard) ;
