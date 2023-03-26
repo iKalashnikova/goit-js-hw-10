@@ -28,7 +28,7 @@ function countryCardMarkup({name, capital, population, flags, languages  }) {
 
 function counriesListMarkup({name, flags}) {
 
-  const countryList = `<li class = "country_item"><div class = "country"><img src="${flags.svg}" alt="${name.official}" width = "30"><h2 class = "country_name">${name.official}</h2></li></div>`;
+  const countryList = `<li class = "country_item"><div class = "country"><img src="${flags.svg}" alt="${name.official}" width = "30"><h2 class = "country_list_name">${name.official}</h2></li></div>`;
 
   countryEl.insertAdjacentHTML('beforeend', countryList) ;
 }
