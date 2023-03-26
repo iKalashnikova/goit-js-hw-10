@@ -9,8 +9,6 @@ const DEBOUNCE_DELAY = 300;
 const inputEl = document.querySelector('input');
 const countryEl = document.querySelector('.country-list');
 
-let inputName = null;
-
 inputEl.addEventListener('input', debounce(fetchCountries, DEBOUNCE_DELAY));
 
 function countryCardMarkup({name, capital, population, flags, languages  }) {

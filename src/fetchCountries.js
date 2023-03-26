@@ -2,7 +2,7 @@ import Notiflix from 'notiflix';
 import { renderCountryCard, renderCountryList, inputEl, countryEl } from './index.js';
 
 export default function fetchCountries() {
-  inputName = inputEl.value.trim();
+  const inputName = inputEl.value.trim();
   countryEl.innerHTML = '';
 
     fetch(`https://restcountries.com/v3.1/name/${inputName}?fields=name,capital,population,flags,languages`)
