@@ -40,7 +40,7 @@ function countryCardMarkup({name, capital, population, flags, languages  }) {
   
   const countryCard = `
   <li>
-  <img src="${flags.svg}" alt="${name.official}>
+  <img src="${flags.svg}" alt="${name.official}">
   <h2>${name.official}</h2>
   <p> Capital: ${capital}</p>
   <p> population: ${population}</p>
@@ -52,7 +52,7 @@ function countryCardMarkup({name, capital, population, flags, languages  }) {
 
 function counriesListMarkup({name, flags}) {
 
-  const countryList = `<li><img src="${flags.svg}" alt="${name.official}><h2>${name.official}</h2></li>`;
+  const countryList = `<li><img src="${flags.svg}" alt="${name.official}"><h2>${name.official}</h2></li>`;
 
   countryEl.insertAdjacentHTML('beforeend', countryList) ;
 }
