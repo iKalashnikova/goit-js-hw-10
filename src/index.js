@@ -16,20 +16,21 @@ inputEl.addEventListener('input', debounce(fetchCountries, DEBOUNCE_DELAY));
 function countryCardMarkup({name, capital, population, flags, languages  }) {
   
   const countryCard = `
-  <li>
-  <img src="${flags.svg}" alt="${name.official}" width = "50">
-  <h2>${name.official}</h2>
-  <p> Capital: ${capital}</p>
-  <p> population: ${population}</p>
-  <p> languages: ${Object.values(languages).join(', ')}</p>
-  </li>`;
+  <li class = "country_item"><div class = "country" >
+  <img src="${flags.svg}" alt="${name.official}" width = "30">
+  <h2 class = "country_name">${name.official}</h2></div>
+  <div class = country_item_wrap>
+  <p class = "country_p" > <span class = "span_element">Capital:</span> ${capital}</p>
+  <p class = "country_p"> <span class = "span_element">Population:</span> ${population}</p>
+  <p class = "country_p"> <span class = "span_element">Languages:</span> ${Object.values(languages).join(', ')}</p>
+  </li></div>`;
 
   countryEl.insertAdjacentHTML('beforeend', countryCard) ;
 }
 
 function counriesListMarkup({name, flags}) {
 
-  const countryList = `<li><img src="${flags.svg}" alt="${name.official}" width = "50"><h2>${name.official}</h2></li>`;
+  const countryList = `<li class = "country_item"><div class = "country"><img src="${flags.svg}" alt="${name.official}" width = "30"><h2 class = "country_name">${name.official}</h2></li></div>`;
 
   countryEl.insertAdjacentHTML('beforeend', countryList) ;
 }
