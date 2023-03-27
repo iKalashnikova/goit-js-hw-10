@@ -4,7 +4,6 @@ import fetchCountries from './fetchCountries';
 export { renderCountryCard, renderCountryList, inputEl, countryEl };
 
 const DEBOUNCE_DELAY = 300;
-
 const inputEl = document.querySelector('input');
 const countryEl = document.querySelector('.country-list');
 
@@ -37,3 +36,4 @@ const renderCountryCard = array =>
 
 const renderCountryList = array =>
   array.forEach(list => counriesListMarkup(list));
+
