@@ -21,7 +21,7 @@ function countryCardMarkup({ name, capital, population, flags, languages }) {
   <p class = "country_p"> <span class = "span_element">Languages:</span> ${Object.values(
     languages
   ).join(', ')}</p>
-  </li></div>`;
+  </div></li>`;
 
   countryEl.insertAdjacentHTML('beforeend', countryCard);
 }
