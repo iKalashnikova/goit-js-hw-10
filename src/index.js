@@ -37,3 +37,4 @@ const renderCountryCard = array =>
 const renderCountryList = array =>
   array.forEach(list => counriesListMarkup(list));
 
+// не вдається запушити оновлення  
